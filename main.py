@@ -6,20 +6,26 @@ from discord.ext import commands
 
 
 
-#setting prefix with a list of certain string
 client = commands.Bot(command_prefix=["biji ", "Biji ", "Pler ", "pler ","+"])
+
+#removed the default discord.py help command
 client.remove_command("help")
 
 
-#list of bot message
+#list of javanesse cuss words
 pisuhan = ["JANCUK!!","GOBLOK!!","KOMUNIS!!","ASU KOE!","BADJINGAN KOE!","LONTE!!","JEMBUOTI!!",]
 celukan = ["Opo su","Pie Nyuk", "Lhapo cok"]
 respn = ["ndene!", "mbedhil!", "join!", "mlebu kene!", "wani ora?!"]
 pisuhan2 = ["TANGANE!!", "UTEKE!!","GOBLOK!", "FAKYU!"]
+
+#list of random short video
 emotions = ['https://www.youtube.com/watch?v=av-rLcM5AgY', 'https://www.youtube.com/watch?v=NaHNRDfJVTc','https://www.youtube.com/watch?v=mGac5cQzhII', 'https://www.youtube.com/watch?v=QojMooSYJGk', 'https://www.youtube.com/watch?v=zhf1pIl007o', 'https://www.youtube.com/watch?v=NjAN9CW_YmY', 'https://www.youtube.com/watch?v=LFOMo_vwEzc', 'https://www.youtube.com/watch?v=1jwVfvhQlng', 'https://www.youtube.com/watch?v=h-0UD2L4_fU', 'https://www.youtube.com/watch?v=zBJU9ndpH1Q', 'https://www.youtube.com/watch?v=wFWaLzZnLuk', 'https://www.youtube.com/watch?v=fKum4JmG-ew','https://www.youtube.com/watch?v=0nvR5qOG8nw']
 
+#custom help command
 @client.group(invoke_without_command=True)
 async def tulung(ctx):
+  
+  #embed color set to the discord author role color
   em = discord.Embed(title= "Pertulungan", description = "tuliso biji tulung <command>  nek meh dijelaske panjang lebar.", color = ctx.author.color)
 
   em.add_field(name= "celukan", value = "biji ;Biji ;Pler ;pler ")
@@ -131,8 +137,8 @@ async def mood(ctx):
 
 
 
-
-
+    
+#online method from online.py
 online()
 
 client.run(os.getenv('TOKEN'))
