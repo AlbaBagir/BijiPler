@@ -3,15 +3,20 @@ import os
 import random
 from online import online
 from discord.ext import commands
-from discord.utils import get
 
 
-client = commands.Bot(command_prefix=["biji ", "Biji ", "Pler ", "pler "])
+
+#setting prefix with a list of certain string
+client = commands.Bot(command_prefix=["biji ", "Biji ", "Pler ", "pler ","+"])
 client.remove_command("help")
 
+
+#list of bot message
 pisuhan = ["JANCUK!!","GOBLOK!!","KOMUNIS!!","ASU KOE!","BADJINGAN KOE!","LONTE!!","JEMBUOTI!!",]
 celukan = ["Opo su","Pie Nyuk", "Lhapo cok"]
-pisuhan2 = ["HAND!!", "TANGANE!!", "UTEKE!!", "RAMIRENG!","COCOTE"]
+respn = ["ndene!", "mbedhil!", "join!", "mlebu kene!", "wani ora?!"]
+pisuhan2 = ["TANGANE!!", "UTEKE!!","GOBLOK!", "FAKYU!"]
+emotions = ['https://www.youtube.com/watch?v=av-rLcM5AgY', 'https://www.youtube.com/watch?v=NaHNRDfJVTc','https://www.youtube.com/watch?v=mGac5cQzhII', 'https://www.youtube.com/watch?v=QojMooSYJGk', 'https://www.youtube.com/watch?v=zhf1pIl007o', 'https://www.youtube.com/watch?v=NjAN9CW_YmY', 'https://www.youtube.com/watch?v=LFOMo_vwEzc', 'https://www.youtube.com/watch?v=1jwVfvhQlng', 'https://www.youtube.com/watch?v=h-0UD2L4_fU', 'https://www.youtube.com/watch?v=zBJU9ndpH1Q', 'https://www.youtube.com/watch?v=wFWaLzZnLuk', 'https://www.youtube.com/watch?v=fKum4JmG-ew','https://www.youtube.com/watch?v=0nvR5qOG8nw']
 
 @client.group(invoke_without_command=True)
 async def tulung(ctx):
@@ -19,7 +24,7 @@ async def tulung(ctx):
 
   em.add_field(name= "celukan", value = "biji ;Biji ;Pler ;pler ")
   em.add_field(name= "Jasa mengmisuh", value = "pisuhi,cangkemi")
-  em.add_field(name= "Ndelok poto", value = "raine")
+  em.add_field(name= "Fun Stuff", value = "raine, mood")
   
   await ctx.send(embed = em)
 
@@ -62,7 +67,14 @@ async def raine(ctx):
 
     await ctx.send(embed = em)
 
+@tulung.command()
+async def mood(ctx):
 
+    em = discord.Embed(title = "Mood", description = "random video", color = ctx.author.color)
+
+    em.add_field(name = "Carane", value = "tulis wae +mood")
+
+    await ctx.send(embed = em)
 
 @client.command()
 async def raine(ctx, member: discord.Member=None):
@@ -112,6 +124,13 @@ async def cangkemi(ctx):
             await ctx.send(f'{misuh}  <@&{i.id}>')
             continue
         await ctx.send(f'{misuh}  <@{i.id}>')
+
+@client.command()
+async def mood(ctx):
+    await ctx.send(random.choice(emotions))
+
+
+
 
 
 online()
