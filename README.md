@@ -6,8 +6,5 @@ features :
 -send javanesse cuss word w/mentions
 -get user avatar_url and send url on embeds
 -send random short video
+-send random audio
 
-
-pip install pip
-
-You should consider upgrading via the 'c:\users\user\appdata\local\programs\python\python39\python.exe -m pip install --upgrade pip' command.
